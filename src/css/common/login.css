@@ -1,0 +1,303 @@
+.btn {
+    height: 45px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.content {
+    box-sizing: content-box;
+    display: block;
+    width: 100%;
+}
+
+
+.container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    min-height: 100vh;
+    background-color: white;
+}
+
+.container .login {
+    background-color: white;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+    margin: 0 auto;
+    padding: 96px 24px 24px;
+    width: 100%;
+}
+
+.container .login form {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.container .login form .title {
+    margin-top: -72px;
+}
+
+.container .login form .title .box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+}
+
+.container .login form .payload {
+    flex-grow: unset;
+}
+
+.container .login form .payload .item {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 0;
+    position: relative;
+}
+
+.container .login form .payload .item input {
+    flex-grow: 1;
+    flex-shrink: 1;
+    background-color: transparent;
+    border: 1px solid #747775;
+    border-radius: 4px;
+    display: block;
+    font: 400 16px Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    line-height: 24px;
+    min-width: 0;
+    outline: none;
+    color: #1f1f1f;
+    font-size: 16px;
+    height: 28px;
+    margin: 1px 1px 0 1px;
+    padding: 13px 15px;
+    text-align: left;
+    width: 100%;
+    z-index: 1;
+    box-sizing: content-box;
+}
+
+.container .login form .button {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-bottom: -6px;
+    margin-top: 32px;
+}
+
+.container .footer {
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container .footer .credit {
+    text-transform: capitalize;
+    font-size: 1rem;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.container .footer .credit span {
+    color: var(--orange);
+}
+
+
+
+
+
+
+/* 600 */
+@media (min-width: 600px) {
+    .container {
+        background: #f0f4f9;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        padding: 48px 0;
+    }
+
+    .container .login {
+        -webkit-border-radius: 28px;
+        border-radius: 28px;
+        min-height: 528px;
+        padding-left: 24px;
+        padding-right: 24px;
+        width: 480px;
+    }
+
+    .container .footer {
+        padding: 0 16px;
+        width: 480px;
+    }
+}
+@media (min-width: 600px) and (orientation: landscape) {
+    .container {
+        background: white;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        padding: 0;
+    }
+
+    .container .login {
+        -webkit-border-radius: 28px;
+        border-radius: 28px;
+        min-height: unset;
+    }
+
+    .container .footer {
+        padding-left: 24px;
+        padding-right: 24px;
+        width: 100%;
+    }
+}
+@media (min-width: 600px) and (orientation: landscape), (min-width: 1600px) {
+    .container .login form {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .container .login form .title {
+        padding-right: 24px;
+        flex-basis: 50%;
+        flex-grow: 1;
+        max-width: 50%;
+    }
+
+    .container .login form .title .box {
+        margin-bottom: 0;
+    }
+
+    .container .login form .payload {
+        flex-basis: 50%;
+        flex-grow: 1;
+        max-width: 50%;
+        padding-left: 24px;
+    }
+
+    .container .login form .button {
+        width: 100%;
+    }
+
+    .container .footer {
+        flex-direction: row;
+    }
+}
+
+/* 840 */
+@media (min-width: 840px) {
+    .container .login {
+        padding: 96px 24px 24px;
+        width: 480px;
+    }
+
+    .container .login form .title .box {
+        margin-bottom: 32px;
+    }
+
+    .container .footer {
+        width: 480px;
+    }
+}
+
+@media (min-width: 840px) and (orientation: landscape) {
+    .container .login {
+        padding-left: 32px;
+        padding-right: 32px;
+        width: 100%;
+    }
+
+    .container .footer {
+        padding-left: 32px;
+        padding-right: 32px;
+        width: 100%;
+    }
+}
+
+/* 960 */
+@media (min-width: 960px) {
+    .container .login {
+        padding-left: 24px;
+        padding-right: 24px;
+        width: 480px;
+    }
+
+    .container .footer {
+        width: 480px;
+    }
+}
+
+@media (min-width: 960px) and (orientation: landscape) {
+    .container {
+        background: #f0f4f9;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        padding: 48px 0;
+    }
+
+    .container .login {
+        -webkit-border-radius: 28px;
+        border-radius: 28px;
+        min-height: 384px;
+        padding: 108px 36px 36px;
+        width: 840px;
+    }
+
+    .container .footer {
+        padding: 0 16px;
+        width: 840px;
+    }
+}
+
+/* 1240 */
+@media (min-width: 1240px) {
+    .container .login {
+        padding-left: 24px;
+        padding-right: 24px;
+        width: 480px;
+    }
+
+    .container .footer {
+        width: 480px;
+    }
+}
+
+@media (min-width: 1240px) and (orientation: landscape) {
+    .container .login {
+        margin-left: 200px;
+        margin-right: 200px;
+        padding-left: 36px;
+        padding-right: 36px;
+        width: auto;
+    }
+
+    .container .footer {
+        width: auto;
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+}

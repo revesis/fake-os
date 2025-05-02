@@ -1,0 +1,17 @@
+.container {
+    margin: 7% auto 0;
+    max-width: 390px;
+    min-height: 180px;
+    background: url(../../assets/images/errors/robot.png) 100% 5px no-repeat;
+    padding: 30px 205px 15px 0;
+}
+
+.container p {
+    margin: 11px 0 22px;
+    overflow: hidden;
+}
+
+ins {
+    color: #777;
+    text-decoration: none;
+}

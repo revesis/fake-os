@@ -1,0 +1,96 @@
+.role-container {
+    max-width: 1712px;
+    color: var(--front-color);
+}
+
+.role-container .table {
+    border-collapse: collapse;
+    border: 2px solid rgb(140 140 140);
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    /*width: 100%;*/
+}
+
+.role-container .table caption {
+    caption-side: bottom;
+}
+
+.role-container .table thead,
+.role-container .table tfoot {
+    background-color: var(--thead-color);
+}
+
+.role-container .table th,
+.role-container .table td {
+    border: 1px solid rgb(160 160 160);
+    padding: 8px 10px;
+}
+
+.role-container .table th[scope="row"] {
+  background-color: var(--tbody-row-color);
+}
+
+.role-container .pagination {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.role-container .pagination .first {
+}
+
+.role-container .pagination .navigation {
+    display: inline-block;
+    height: 100%;
+    width: 3rem;
+    vertical-align: bottom;
+}
+
+.role-container .pagination .first,
+.role-container .pagination .previous,
+.role-container .pagination .navigation,
+.role-container .pagination .next {
+    color: rgb(94, 94, 94);
+}
+
+.role-container .pagination .previous,
+.role-container .pagination .next {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.role-container .pagination .previous span:last-child,
+.role-container .pagination .next span:last-child {
+    display: none;
+}
+
+.role-container .pagination .previous {
+    margin-right: 2rem;
+}
+
+.role-container .pagination .next {
+    margin-left: 2rem;
+}
+
+.role-container .pagination .navigation .page {
+    display: none;
+    height: 1.5rem;
+    width: 1.25rem;
+}
+
+.role-container .pagination .navigation .page.cursor {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+
+
+/* 600 */
+@media (min-width: 600px) {
+    .role-container .pagination .first {
+    }
+
+    .role-container .pagination .previous span:last-child,
+    .role-container .pagination .next span:last-child {
+    }
+}

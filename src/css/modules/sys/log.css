@@ -1,0 +1,96 @@
+.log-container {
+    max-width: 1712px;
+    color: var(--front-color);
+}
+
+.log-container .table {
+    border-collapse: collapse;
+    border: 2px solid rgb(140 140 140);
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    /*width: 100%;*/
+}
+
+.log-container .table caption {
+    caption-side: bottom;
+}
+
+.log-container .table thead,
+.log-container .table tfoot {
+    background-color: var(--thead-color);
+}
+
+.log-container .table th,
+.log-container .table td {
+    border: 1px solid rgb(160 160 160);
+    padding: 8px 10px;
+}
+
+.log-container .table th[scope="row"] {
+  background-color: var(--tbody-row-color);
+}
+
+.log-container .pagination {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.log-container .pagination .first {
+}
+
+.log-container .pagination .navigation {
+    display: inline-block;
+    height: 100%;
+    width: 3rem;
+    vertical-align: bottom;
+}
+
+.log-container .pagination .first,
+.log-container .pagination .previous,
+.log-container .pagination .navigation,
+.log-container .pagination .next {
+    color: rgb(94, 94, 94);
+}
+
+.log-container .pagination .previous,
+.log-container .pagination .next {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.log-container .pagination .previous span:last-child,
+.log-container .pagination .next span:last-child {
+    display: none;
+}
+
+.log-container .pagination .previous {
+    margin-right: 2rem;
+}
+
+.log-container .pagination .next {
+    margin-left: 2rem;
+}
+
+.log-container .pagination .navigation .page {
+    display: none;
+    height: 1.5rem;
+    width: 1.25rem;
+}
+
+.log-container .pagination .navigation .page.cursor {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+
+
+/* 600 */
+@media (min-width: 600px) {
+    .log-container .pagination .first {
+    }
+
+    .log-container .pagination .previous span:last-child,
+    .log-container .pagination .next span:last-child {
+    }
+}

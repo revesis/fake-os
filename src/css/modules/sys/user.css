@@ -1,0 +1,96 @@
+.user-container {
+    max-width: 1712px;
+    color: var(--front-color);
+}
+
+.user-container .table {
+    border-collapse: collapse;
+    border: 2px solid rgb(140 140 140);
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    /*width: 100%;*/
+}
+
+.user-container .table caption {
+    caption-side: bottom;
+}
+
+.user-container .table thead,
+.user-container .table tfoot {
+    background-color: var(--thead-color);
+}
+
+.user-container .table th,
+.user-container .table td {
+    border: 1px solid rgb(160 160 160);
+    padding: 8px 10px;
+}
+
+.user-container .table th[scope="row"] {
+  background-color: var(--tbody-row-color);
+}
+
+.user-container .pagination {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.user-container .pagination .first {
+}
+
+.user-container .pagination .navigation {
+    display: inline-block;
+    height: 100%;
+    width: 3rem;
+    vertical-align: bottom;
+}
+
+.user-container .pagination .first,
+.user-container .pagination .previous,
+.user-container .pagination .navigation,
+.user-container .pagination .next {
+    color: rgb(94, 94, 94);
+}
+
+.user-container .pagination .previous,
+.user-container .pagination .next {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.user-container .pagination .previous span:last-child,
+.user-container .pagination .next span:last-child {
+    display: none;
+}
+
+.user-container .pagination .previous {
+    margin-right: 2rem;
+}
+
+.user-container .pagination .next {
+    margin-left: 2rem;
+}
+
+.user-container .pagination .navigation .page {
+    display: none;
+    height: 1.5rem;
+    width: 1.25rem;
+}
+
+.user-container .pagination .navigation .page.cursor {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+
+
+/* 600 */
+@media (min-width: 600px) {
+    .user-container .pagination .first {
+    }
+
+    .user-container .pagination .previous span:last-child,
+    .user-container .pagination .next span:last-child {
+    }
+}

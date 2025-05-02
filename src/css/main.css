@@ -1,0 +1,504 @@
+
+body:has(.themeSwitch > input:checked) {
+    --front-color: rgb(154, 160, 166);
+    --back-color: #222;
+    --border: .1rem solid rgba(0, 0, 0, .4);
+    --box-shadow: .4rem .4rem 1rem #111, -.4rem -.4rem 1rem #333;
+    --box-shadow-inset: .4rem .4rem 1rem #111 inset, -.4rem -.4rem 1rem #333 inset;
+    --box-shadow-border: 1px 1px 1px #111, -1px -1px 1px #333;
+    --thead-color: rgb(105, 125, 135);
+    --tbody-row-color: #788c82;
+}
+
+
+.sideMenu {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 3rem;
+    width: 3rem;
+    line-height: 1.5rem;
+    margin: .5rem;
+    padding: 0.75rem;
+    text-align: center;
+    color: var(--front-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    cursor: pointer;
+    background-color: transparent;
+    z-index: 1000;
+    transition: none;
+}
+
+.sideMenu:hover {
+    box-shadow: var(--box-shadow);
+    background-color: var(--overlay-backdrop-bgColor);
+}
+
+.sideMenu:has(> input[type="checkbox"]:checked) {
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+}
+
+.sideMenu:has(> input[type="checkbox"]:checked) svg {
+    display: none;
+}
+
+.sideMenu:has(> input[type="checkbox"]:not(:checked)) {
+
+}
+
+.main-container {
+    box-sizing: border-box;
+    height: 100vh;
+    min-height: 100vh;
+    background-color: var(--back-color);
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: calc(-1 * var(--drawer-width) * 1rem);
+    bottom: 0;
+    width: calc(var(--drawer-width) * 1rem);
+    background-color: var(--back-color);
+    border-right: var(--border);
+    padding: 1rem 1rem 0 0;
+    z-index: 1001;
+}
+.sidebar:has(+ .sideMenu > input[type="checkbox"]:checked) {
+    left: 0;
+}
+
+.sidebar .themeSwitch {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    line-height: 1.5rem;
+    height: 3rem;
+    width: 3rem;
+    margin: 0.5rem;
+    padding: 0.75rem;
+    text-align: center;
+    color: var(--front-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.sidebar .themeSwitch:hover {
+    box-shadow: var(--box-shadow);
+    background-color: var(--overlay-backdrop-bgColor);
+}
+
+.sidebar .themeSwitch:has( > input:not(:checked)) .sun {
+    display: none;
+}
+.sidebar .themeSwitch:has( > input:checked) .sun {
+    display: initial;
+}
+.sidebar .themeSwitch:has( > input:not(:checked)) .moon {
+    display: initial;
+}
+.sidebar .themeSwitch:has( > input:checked) .moon {
+    display: none;
+}
+
+.sidebar .logo {
+    height: 3rem;
+    /*line-height: 3rem;*/
+    color: var(--front-color);
+    font-size: 1.6rem;
+}
+
+.sidebar .navbar {
+    text-align: center;
+}
+
+.sidebar .navbar .item {
+    padding: 0.75rem 0 0.75rem 2rem;
+    border-radius: 1rem;
+    color: var(--front-color);
+    display: block;
+    cursor: pointer;
+    text-align: left;
+}
+
+.sidebar .navbar .item:hover {
+    box-shadow: var(--box-shadow);
+}
+
+.sidebar .navbar .item .sidebar__menu-icon {
+    vertical-align: bottom;
+    width: 2.5rem;
+    padding-right: 1rem;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /*padding: 0.2rem 0.3rem;*/
+}
+
+.footer .credit {
+    text-transform: capitalize;
+    font-size: 1rem;
+    padding: 1rem 0;
+    text-align: center;
+    color: var(--front-color);
+}
+
+.footer .credit span {
+    color: var(--orange);
+}
+
+.wrapper {
+    height: 100%;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: var(--box-shadow-border);
+    background-color: var(--back-color);
+    /*padding: 1.2rem 7%;*/
+    z-index: 999;
+}
+
+.header .navbar__body {
+    position: relative;
+    padding: 0.5rem;
+}
+
+.header .navbar__menu {
+    float: left;
+    background-color: transparent;
+    border-bottom: 0;
+    height: 50px;
+    border-right: none;
+    display: flex;
+    flex-wrap: nowrap;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    position: relative;
+    border-bottom: 0;
+}
+
+.header .navbar__menu .navbar__avatar {
+    border-bottom: none !important;
+}
+
+.header .navbar__menu .navbar__avatar * {
+    vertical-align: inherit;
+}
+
+.header .navbar__menu .navbar__avatar .dropdown {
+    /*height: 3rem;*/
+    height: 100%;
+}
+
+.header .navbar__menu .navbar__avatar .dropdown-link {
+    display: inline-block;
+    cursor: pointer;
+    color: var(--front-color);
+}
+
+.header .navbar__menu .navbar__avatar .dropdown-link > img {
+    width: 36px;
+    height: auto;
+    margin-right: 5px;
+    border-radius: 100%;
+    vertical-align: middle;
+}
+
+.header .navbar__menu .navbar__avatar .dropdown-menu {
+    color: var(--front-color);
+    background-color: var(--back-color);
+    box-shadow: var(--box-shadow-softLifted);
+    padding: 5px 15px;
+    transform-style: preserve-3d;
+    transform-origin: top;
+    transform: rotateX(-90deg);
+    opacity: 0;
+    transition: all .2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.header .navbar__menu .navbar__avatar .dropdown-menu:hover {
+    transform: rotateX(0);
+    opacity: 1;
+}
+
+.header .navbar__menu .navbar__avatar .dropdown .dropdown-link:hover + .dropdown-menu {
+    transform: rotateX(0);
+    opacity: 1;
+}
+
+.header .navbar__menu .navbar__avatar .dropdown-menu .dropdown-item {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    font-size: 14px;
+    line-height: 22px;
+    list-style: none;
+    margin: 0;
+    outline: none;
+    padding: 5px 16px;
+    white-space: nowrap;
+}
+
+.header .navbar__menu--right {
+    float: right;
+    padding: 0 20px;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: right;
+}
+
+.updatePasswordDialog {
+    margin: auto;
+    width: 480px;
+    border-radius: 1rem;
+    box-sizing: content-box;
+    border-width: inherit;
+    border-style: solid;
+    border-color: #FFFFFF;
+    border-image: initial;
+    /*inset-block-start: auto;*/
+}
+
+.updatePasswordDialog[open] {
+}
+
+.updatePasswordDialog .dialog__header {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    padding: 1rem 0;
+    line-height: 1.5rem;
+    border-bottom: 1px solid rgb(212, 212, 212);
+}
+
+.updatePasswordDialog .dialog__form {
+    overflow-y: auto;
+    height: calc(100% - 4px - 4rem);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.updatePasswordDialog .dialog__form::-webkit-scrollbar {
+    display: none;
+}
+
+.updatePasswordDialog .dialog__form .form__list {
+    width: 100%;
+    line-height: 1rem;
+    font-size: 1rem;
+}
+
+.updatePasswordDialog .dialog__form .form__list .form__item {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 0;
+    position: relative;
+}
+
+.updatePasswordDialog .dialog__form .form__list .form__item input {
+    flex-grow: 1;
+    flex-shrink: 1;
+    background-color: transparent;
+    border: 1px solid #747775;
+    border-radius: 4px;
+    display: block;
+    font: 400 16px Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    line-height: 24px;
+    min-width: 0;
+    outline: none;
+    color: #1f1f1f;
+    font-size: 16px;
+    height: 28px;
+    margin: 1px 1px 0 1px;
+    padding: 13px 15px;
+    text-align: left;
+    width: 100%;
+    z-index: 1;
+    box-sizing: content-box;
+}
+
+.updatePasswordDialog form .dialog-footer {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-bottom: -6px;
+    margin-top: 32px;
+}
+
+.updatePasswordDialog form .dialog-footer button {
+    width: 100%;
+    font-family: sans-serif;
+    line-height: 1.15;
+    margin: 0;
+
+    overflow: visible;
+
+    text-transform: none;
+
+    -webkit-appearance: button;
+
+    height: 45px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.content {
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.content::-webkit-scrollbar {
+    width: 16px
+}
+
+.content::-webkit-scrollbar-thumb {
+    background-clip: padding-box;
+    background-color: #c9cdd3;
+    border-radius: 16px;
+    border: 5px solid transparent;
+    box-shadow: none;
+    min-height: 50px
+}
+
+.content::-webkit-scrollbar-thumb:hover {
+    background-color: #bec3c8
+}
+
+.content::-webkit-scrollbar-thumb:active {
+    background-color: #b9bdc1
+}
+
+.content::-webkit-scrollbar-track {
+    background: transparent;
+    border: none;
+}
+
+@media screen and (max-width: 320px) {
+    .content::-webkit-scrollbar {
+        width:8px
+    }
+
+    .content::-webkit-scrollbar-thumb {
+        border-radius: 8px;
+        border-width: 3px;
+    }
+
+    .content::-webkit-scrollbar-thumb:hover {
+        border-width: 3px;
+    }
+}
+
+.content .content__wrapper {
+    position: relative;
+    width: max-content;
+    height: max-content;
+}
+
+
+@media (min-width: 600px) {
+    .sideMenu {
+        transition: all .2s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+    .sideMenu:has(> input[type="checkbox"]:checked) {
+        height: 3rem;
+        width: 3rem;
+        border-radius: 50%;
+        left: calc(var(--drawer-width) * 1rem);
+    }
+    .sideMenu:has(> input[type="checkbox"]:checked) svg {
+        display: initial;
+    }
+
+    .main-container:has(> .sideMenu > input[type="checkbox"]:checked) {
+        padding-left: calc(var(--drawer-width) * 1rem);
+    }
+
+    .updatePasswordDialog {
+        height: 60%;
+        width: 100%;
+    }
+}
+@media (min-width: 600px) and (orientation: landscape) {
+    .footer {
+        flex-direction: row;
+    }
+
+    .updatePasswordDialog form .dialog-footer {
+        flex-direction: row;
+        align-items: flex-end;
+    }
+
+    .updatePasswordDialog form .dialog-footer button {
+        width: 50%;
+    }
+}
+
+@media (min-width: 840px) {
+
+}
+@media (min-width: 840px) and (orientation: landscape) {
+    .main-container {
+        width: 100%;
+    }
+
+    .sideMenu {
+        display: inherit;
+    }
+}
+
+@media (min-width: 960px) {
+
+}
+@media (min-width: 960px) and (orientation: landscape) {
+    .main-container {
+        padding-left: calc(var(--drawer-width) * 1rem);
+    }
+    .sidebar {
+        left: 0;
+    }
+    .sideMenu {
+        display: none;
+    }
+}
+
+@media (min-width: 1240px) {
+
+}
+@media (min-width: 1240px) and (orientation: landscape) {
+    .updatePasswordDialog {
+        margin-left: 200px;
+        margin-right: 200px;
+        padding-left: 36px;
+        padding-right: 36px;
+        width: auto;
+    }
+}
+
+@media (min-width: 1600px) {
+
+}

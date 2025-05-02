@@ -1,0 +1,6 @@
+.home-container {
+  line-height: 1.5rem;
+  color: var(--front-color);
+  background-color: var(--back-color);
+  height: 100%;
+}
