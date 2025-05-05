@@ -20,7 +20,8 @@ const store = createStore({
             }
         },
         persisted(state) {
-            sessionStorage.setItem("storeState", JSON.stringify(state));
+            let {common, user} = state;
+            sessionStorage.setItem("storeState", JSON.stringify({common, user}));
         }
     },
     modules: {
