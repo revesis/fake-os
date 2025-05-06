@@ -86,7 +86,6 @@ export default defineComponent({
                 this.$store.commit("persisted");
                 return queryNav.bind(this)().then(data => {
                     sessionStorage.setItem("menuList", JSON.stringify(data.menuList || "[]"));
-                    initData.bind(this)();
 
                     // location.reload();
                     this.$router.replace({name: "main"});
