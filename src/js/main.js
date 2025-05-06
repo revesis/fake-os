@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 import {defineComponent} from "vue";
 
 let dataForm = {
@@ -109,12 +111,20 @@ export default defineComponent( {
             return {height: height + "px"};
         }
     },
-    beforeCreate() {
+    beforeRouteEnter(to, from, next) {
         const reg = new RegExp('(?:^|;\\s*)JSESSIONID=[^;]*');
         if (!reg.test(document.cookie)) {
-            this.$router.replace({name: "401"});
-            return;
+            next({name: "401"});
+        } else {
+            next();
         }
+    },
+    beforeCreate() {
+        // const reg = new RegExp('(?:^|;\\s*)JSESSIONID=[^;]*');
+        // if (!reg.test(document.cookie)) {
+        //     this.$router.replace({name: "401"});
+        //     return;
+        // }
         if (sessionStorage.getItem("dynamicMenuRoutes")) {
             this.$store.commit("revert");
         }
